@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="This is a boilerplate for a Bootstrap 4.1.1 project">
+    <meta name="keywords"
+        content="HTML, CSS, JS, Sass, JavaScript, framework, bootstrap, front-end, frontend, web development">
+    <meta name="author" content="Henrik H. Boelsmand">
+    <title>Message Board</title>
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-danger fixed-top">
+        <a class="navbar-brand" href=".">MEAN</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href=".">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+
+        <div style="padding-top:120px; text-align:center;">
+            <h1 class="text-left">The Dojo Message Board</h1>
+            <hr>
+            <% if(messages.registration) { %>
+     <% for (var x of messages.registration) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %>
+
+            <p class="lead">
+
+
+            <form action="/postMessage" method="post">
+            <div class="text-left form-group">
+              <label for="">Name</label>
+              <input type="text"
+                class="form-control" name="name" id="" aria-describedby="helpId" placeholder="Enter name here">
+                <br>
+                <label for="">Post:</label>
+                <input type="text"
+                class="form-control" name="post" id="" aria-describedby="helpId" placeholder="Enter post content here">
+            </div>
+            <div class="text-right">
+            <button type="submit" class="text-right btn btn-danger">Post message!</button>
+            </div>
+            </form>
+            </p>
+        </div>
+    <div>
+    <% for (var i = 0; i < posts.length; i++) { %>
+                <h3> Name: <%= posts[i].name %> </h3>
+                <h3> Post: <%= posts[i].post %> </h3>
+                <br>
+                <h4>Comments:</h4>
+                <hr>
+           <% for (var j = 0; j < posts[i].Comment.length; j++) { %>
+            <p>Name: <%= posts[i].Comment[j].name%> </p>
+            <p>Comment: <%= posts[i].Comment[j].comment%> </p>
+            <% } %>
+            <hr>
+    <p class="lead">
+            <form action="/postComment/<%= posts[i]._id %>" method="post">
+            <div class="text-left form-group">
+              <label for="">Name</label>
+              <input type="text"
+                class="form-control" name="name" id="" aria-describedby="helpId" placeholder="Enter name here">
+                <br>
+                <label for="">Comment:</label>
+                <input type="text"
+                class="form-control" name="comment" id="" aria-describedby="helpId" placeholder="Enter post content here">
+            </div>
+            <div class="text-right">
+            <button type="submit" class="text-right btn btn-danger">Post comment!</button>
+            </div>
+            </form>
+            </p>
+    </div>
+<% } %>
+    </div>
+</body>
+
+</html>

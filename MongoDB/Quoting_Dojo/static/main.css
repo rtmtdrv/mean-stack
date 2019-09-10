@@ -1,0 +1,52 @@
+    
+.container {
+    width: 25rem;
+    min-height: 15rem;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 3rem;
+    border: 0.25rem solid blue;
+}
+
+.field {
+    width: 18rem;
+}
+
+.right {
+    float: right;
+}
+
+h1 {
+    text-align: center;
+}
+
+.error {
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
+
+#who {
+    font-weight: bold;
+    text-align: center;
+    color: blue;
+}
+
+#quote {
+    font-weight: bold;
+}
+
+/* .btn1 {
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 6.75rem;
+    color: white;
+    background-color: green;
+}
+.btn2 {
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: -2.5rem;
+    color: white;
+    background-color: blue;
+} */

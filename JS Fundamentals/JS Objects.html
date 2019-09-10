@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Objects</title>
+</head>
+<body>
+
+
+    <!-- Challenge 1 -->
+    <!-- Write a function that accepts an array of student objects, as shown below. Print all of the students' names and their cohorts. -->
+
+    <script>
+
+    let students = [
+        {name: 'Remy', cohort: 'Jan'},
+        {name: 'Genevieve', cohort: 'March'},
+        {name: 'Chuck', cohort: 'Jan'},
+        {name: 'Osmund', cohort: 'June'},
+        {name: 'Nikki', cohort: 'June'},
+        {name: 'Boris', cohort: 'June'}
+    ];
+    
+    function getNames(arr){
+        for(var i = 0; i < arr.length; i++){
+        console.log("Name: " + arr[i].name + ", Cohort: " + arr[i].cohort);
+        }
+    }
+    getNames(students);
+
+    let users = {
+        employees: [
+            {'first_name':  'Miguel', 'last_name' : 'Jones'},
+            {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+            {'first_name' : 'Nora', 'last_name' : 'Lu'},
+            {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+        ],
+        managers: [
+        {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+        {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+        ]
+    };
+
+    function employeesManagers(obj){
+      for(mainKey in users){
+          console.log(mainKey.toUpperCase());
+          for(var i = 0; i < users[mainKey].length; i++){
+            var count = users[mainKey][i].last_name.length + users[mainKey][i].first_name.length;
+            console.log(i+1 + " - " + users[mainKey][i].last_name.toUpperCase() + ", " + users[mainKey][i].first_name.toUpperCase() + " - " + count);
+          }
+      }
+    }
+
+    employeesManagers(users);
+
+
+    </script>
+
+
+
+    <h1>JS Objects - See Console </h1>
+    
+</body>
+</html>
